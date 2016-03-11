@@ -1,0 +1,37 @@
+<h1>Registration Info</h1>
+
+<p>Hello <%=@user.name%>! <p>
+
+Full Name: <%=@user.full_name%>
+<br></br>
+
+Street Address: <%=@user.address%>
+<br></br>
+
+City: <%=@user.city%>
+<br></br>
+
+State: <%=@user.postal%>
+<br></br>
+
+Country: <%=@user.country%>
+<br></br>
+
+Email: <%=@user.email%>
+<br></br>
+
+<ul>
+<!-- its displaying each phone number in an array from the USER table  -->
+<% @user.phones.each do |x| %>
+<li>Phone: <%= x.number %></li>
+<% end %>
+
+</ul>
+<br></br>
+<br></br>
+
+<!-- this is our logout button -->
+<form action="/logout/end" method="get">
+ <p>Please Logout</p>
+  <input type="submit" value="Logout" />
+</form>
